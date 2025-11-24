@@ -3,6 +3,7 @@ import { AppProvider, useAppContext } from './context/AppContext';
 import Layout from './components/Layout';
 import EventCard from './components/EventCard';
 import Modal from './components/Modal';
+import LandingPage from './components/LandingPage';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -22,8 +23,12 @@ const Dashboard = ({ view, setView }) => {
     endTime: ''
   });
 
+  // Show Login/Signup pages
   if (view === 'login') return <Layout setView={setView}><Login setView={setView} /></Layout>;
   if (view === 'signup') return <Layout setView={setView}><Signup setView={setView} /></Layout>;
+
+  // Show Landing Page if user is not logged in
+  if (!user) return <Layout setView={setView}><LandingPage onNavigate={setView} /></Layout>;
 
   const handleSaveEvent = (e) => {
     e.preventDefault();
