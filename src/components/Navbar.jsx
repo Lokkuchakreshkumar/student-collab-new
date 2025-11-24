@@ -25,7 +25,7 @@ const Navbar = ({ setView }) => {
                         WebkitTextFillColor: 'transparent',
                         letterSpacing: '-0.03em'
                     }}>
-                        CampusConnect
+                        Extra-Curricular Hub
                     </span>
                 </div>
 
